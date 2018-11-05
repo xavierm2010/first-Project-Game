@@ -625,9 +625,8 @@ GameObject:
   - component: {fileID: 1744920103}
   - component: {fileID: 1744920106}
   - component: {fileID: 1744920109}
-  - component: {fileID: 1744920108}
-  - component: {fileID: 1744920107}
   - component: {fileID: 1744920110}
+  - component: {fileID: 1744920111}
   m_Layer: 8
   m_Name: Square
   m_TagString: Untagged
@@ -742,50 +741,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.0281191, y: 2.1941504}
   m_EdgeRadius: 0
---- !u!114 &1744920107
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1744920102}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d5c32e6cbf5553f4bb2198b6c5af5dee, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_JumpForce: 700
-  m_CrouchSpeed: 0.36
-  m_MovementSmoothing: 0.05
-  m_AirControl: 1
-  m_WhatIsGround:
-    serializedVersion: 2
-    m_Bits: 512
-  m_GroundCheck: {fileID: 2080421957}
-  m_CeilingCheck: {fileID: 1701534742}
-  m_CrouchDisableCollider: {fileID: 0}
-  OnLandEvent:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  OnCrouchEvent:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: Controller+BoolEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
---- !u!114 &1744920108
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1744920102}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dd0479398cb111849a20821da8aea78e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  control: {fileID: 1744920107}
-  runSpeed: 40
 --- !u!58 &1744920109
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -814,6 +769,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FirePoint: {fileID: 1137753739}
   Bullet: {fileID: 1242996774623190, guid: 9fec06c917cbedc44a40413c56ce135e, type: 2}
+--- !u!114 &1744920111
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1744920102}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 188a929b6379b464d96472bd0854e534, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 300
+  jumpforce: 700
+  groundCheck: {fileID: 2080421957}
+  whatIsGround:
+    serializedVersion: 2
+    m_Bits: 512
+  ExtraJumpsValue: 1
 --- !u!1 &2080421956
 GameObject:
   m_ObjectHideFlags: 0
@@ -825,7 +798,7 @@ GameObject:
   m_Layer: 0
   m_Name: GroundCheck
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
