@@ -92,6 +92,7 @@ MonoBehaviour:
   SpeedBullet: 80
   damage: 25
   rb: {fileID: 50773853296275744}
+  time: 100
 --- !u!212 &212494665503068192
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -127,7 +128,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 10911, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 21300000, guid: b373d209c5713ea42b432079810a45d5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
