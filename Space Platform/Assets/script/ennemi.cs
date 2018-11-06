@@ -5,6 +5,8 @@ using UnityEngine;
 public class ennemi : MonoBehaviour {
 
     public int PV = 100;
+    [SerializeField] private HealthBar healthBar;
+    private float health;
 
 
     public void TakeDamage(int damage)
@@ -14,6 +16,12 @@ public class ennemi : MonoBehaviour {
         {
             Die();
         }
+    }
+
+    private void Update()
+    {
+        health = (float)PV / 100;
+        healthBar.SetSize(health);
     }
 
     void Die()
