@@ -8,20 +8,30 @@ public class weapon : MonoBehaviour {
     public GameObject Bullet;
     private float ShootFrequence = 0f;
     public float ShootDelay = 2f;
-	
-	void Update ()
+    public Animator anim;
+    bool Fire = false;
+
+    void Update ()
     {
 		if(Input.GetKey(KeyCode.Space) && ShootFrequence <= 0)
         {
+            Fire = true;
             Shoot();
             ShootFrequence = ShootDelay;
         }
 
-        if(Input.GetKey(KeyCode.Space) && ShootFrequence > 0)
+        else if (Input.GetKey(KeyCode.Space) && ShootFrequence > 0)
         {
+            Fire = true;
             ShootFrequence = ShootFrequence - Time.deltaTime;
         }
-	}
+        else if(Input.GetKey(KeyCode.Space) == false)
+        {
+            Fire = false;
+        }
+
+        anim.SetBool("fire", Fire);
+    }
 
     void Shoot()
     {

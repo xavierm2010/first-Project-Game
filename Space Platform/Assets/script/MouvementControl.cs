@@ -19,6 +19,8 @@ public class MouvementControl : MonoBehaviour
     private int ExtraJumps;
     public int ExtraJumpsValue = 0;
     private bool jump = false;
+    public Animator anim;
+    private bool isMoving;
 
 
     void Start()
@@ -31,7 +33,7 @@ public class MouvementControl : MonoBehaviour
     {
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, checkRadius, whatIsGround);  //verifie si il est sur le sol
 
-        rb.velocity = new Vector2(MoveInput * speed * Time.deltaTime, rb.velocity.y);
+        rb.velocity = new Vector2(MoveInput, rb.velocity.y);
 
         if(jump == true)
         {
@@ -42,7 +44,7 @@ public class MouvementControl : MonoBehaviour
 
     void Update()
     {
-        MoveInput = Input.GetAxisRaw("Horizontal");
+        MoveInput = Input.GetAxisRaw("Horizontal") * speed * Time.deltaTime;
         if(facingRight == false && MoveInput > 0)
         {
             flip();
@@ -62,7 +64,17 @@ public class MouvementControl : MonoBehaviour
             ExtraJumps--;
             jump = true;
         }
-        Debug.Log(ExtraJumps);
+
+        if(MoveInput > 0 || MoveInput < 0)
+        {
+            isMoving = true;
+        }
+        else
+        {
+            isMoving = false;
+        }
+
+        anim.SetBool("moving", isMoving);
     }
 
     void flip() //retourne le sprite du perso de 180 degrer
