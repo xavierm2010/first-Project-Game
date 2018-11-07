@@ -788,7 +788,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FirePoint: {fileID: 1137753739}
   Bullet: {fileID: 1242996774623190, guid: 9fec06c917cbedc44a40413c56ce135e, type: 2}
-  ShootDelay: 0.2
+  ShootDelay: 0.1
   anim: {fileID: 1744920107}
 --- !u!114 &1744920111
 MonoBehaviour:
