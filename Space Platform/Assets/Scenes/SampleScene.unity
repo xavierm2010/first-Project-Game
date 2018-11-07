@@ -122,11 +122,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4652978169185364, guid: 91c0cb63648dbe54199cfa30a040900e, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -35.638634
+      value: -49.244
       objectReference: {fileID: 0}
     - target: {fileID: 4652978169185364, guid: 91c0cb63648dbe54199cfa30a040900e, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -7.198064
+      value: -1.5
       objectReference: {fileID: 0}
     - target: {fileID: 4652978169185364, guid: 91c0cb63648dbe54199cfa30a040900e, type: 2}
       propertyPath: m_LocalPosition.z
@@ -155,6 +155,14 @@ Prefab:
     - target: {fileID: 1131259130202922, guid: 91c0cb63648dbe54199cfa30a040900e, type: 2}
       propertyPath: m_Name
       value: ground (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4652978169185364, guid: 91c0cb63648dbe54199cfa30a040900e, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 26.549246
+      objectReference: {fileID: 0}
+    - target: {fileID: 4652978169185364, guid: 91c0cb63648dbe54199cfa30a040900e, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 27.926588
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 91c0cb63648dbe54199cfa30a040900e, type: 2}
@@ -239,7 +247,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.4745098, g: 0.28015208, b: 0.19215688, a: 0}
+  m_BackGroundColor: {r: 0.2924528, g: 0.08201092, b: 0.034487356, a: 0}
   m_projectionMatrixMode: 1
   m_SensorSize: {x: 36, y: 24}
   m_LensShift: {x: 0, y: 0}
@@ -375,11 +383,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4652978169185364, guid: 91c0cb63648dbe54199cfa30a040900e, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -9.8308735
+      value: -16.24
       objectReference: {fileID: 0}
     - target: {fileID: 4652978169185364, guid: 91c0cb63648dbe54199cfa30a040900e, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -15.991436
+      value: -22.319
       objectReference: {fileID: 0}
     - target: {fileID: 4652978169185364, guid: 91c0cb63648dbe54199cfa30a040900e, type: 2}
       propertyPath: m_LocalPosition.z
@@ -408,6 +416,14 @@ Prefab:
     - target: {fileID: 1131259130202922, guid: 91c0cb63648dbe54199cfa30a040900e, type: 2}
       propertyPath: m_Name
       value: ground (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4652978169185364, guid: 91c0cb63648dbe54199cfa30a040900e, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 94.06686
+      objectReference: {fileID: 0}
+    - target: {fileID: 4652978169185364, guid: 91c0cb63648dbe54199cfa30a040900e, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 19.50974
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 91c0cb63648dbe54199cfa30a040900e, type: 2}
@@ -551,11 +567,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4652978169185364, guid: 91c0cb63648dbe54199cfa30a040900e, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 3.95755
+      value: 12.15
       objectReference: {fileID: 0}
     - target: {fileID: 4652978169185364, guid: 91c0cb63648dbe54199cfa30a040900e, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -11.152479
+      value: -7.79
       objectReference: {fileID: 0}
     - target: {fileID: 4652978169185364, guid: 91c0cb63648dbe54199cfa30a040900e, type: 2}
       propertyPath: m_LocalPosition.z
@@ -781,7 +797,7 @@ Prefab:
     - target: {fileID: 114532883045311262, guid: 7ee0ccf696333f04c86a0b39307f20d9,
         type: 2}
       propertyPath: speed
-      value: 500
+      value: 450
       objectReference: {fileID: 0}
     - target: {fileID: 212463810719692242, guid: 7ee0ccf696333f04c86a0b39307f20d9,
         type: 2}
