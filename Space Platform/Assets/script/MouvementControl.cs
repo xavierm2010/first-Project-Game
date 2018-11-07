@@ -23,7 +23,7 @@ public class MouvementControl : MonoBehaviour
 
     void Start()
     {
-        ExtraJumps = ExtraJumpsValue;
+        ExtraJumps = ExtraJumpsValue - 1;
         rb = GetComponent<Rigidbody2D>();
     }
 
@@ -54,17 +54,18 @@ public class MouvementControl : MonoBehaviour
 
         if(isGrounded == true)
         {
-            ExtraJumps = ExtraJumpsValue;
+            ExtraJumps = ExtraJumpsValue - 1;
         }
 
-        if(Input.GetKeyDown(KeyCode.UpArrow) && ExtraJumps > 0)
+        if(Input.GetKeyDown(KeyCode.UpArrow) && ExtraJumps >= 0)
         {
+            ExtraJumps--;
             jump = true;
-            ExtraJumps = ExtraJumps - 1;
         }
+        Debug.Log(ExtraJumps);
     }
 
-    void flip()
+    void flip() //retourne le sprite du perso de 180 degrer
     {
         facingRight = !facingRight;
         transform.Rotate(0f, 180f, 0f);

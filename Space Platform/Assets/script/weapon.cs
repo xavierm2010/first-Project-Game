@@ -6,12 +6,20 @@ public class weapon : MonoBehaviour {
 
     public Transform FirePoint;
     public GameObject Bullet;
+    private float ShootFrequence = 0f;
+    public float ShootDelay = 2f;
 	
 	void Update ()
     {
-		if(Input.GetKeyDown(KeyCode.Space))
+		if(Input.GetKey(KeyCode.Space) && ShootFrequence <= 0)
         {
             Shoot();
+            ShootFrequence = ShootDelay;
+        }
+
+        if(Input.GetKey(KeyCode.Space) && ShootFrequence > 0)
+        {
+            ShootFrequence = ShootFrequence - Time.deltaTime;
         }
 	}
 
