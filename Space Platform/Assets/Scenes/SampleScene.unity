@@ -356,26 +356,6 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5321996309d5a5e4d96fbd7ecd3661be, type: 2}
   m_IsPrefabAsset: 0
---- !u!1 &986077508 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1245119413336606, guid: 5321996309d5a5e4d96fbd7ecd3661be,
-    type: 2}
-  m_PrefabInternal: {fileID: 426538860}
---- !u!58 &986077514
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 986077508}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 3
 --- !u!1 &1042625458
 GameObject:
   m_ObjectHideFlags: 3
@@ -796,7 +776,7 @@ GameObject:
   - component: {fileID: 1744920107}
   m_Layer: 8
   m_Name: Square
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
