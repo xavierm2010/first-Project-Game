@@ -7,6 +7,8 @@ public class MouvementControl : MonoBehaviour
 
     public float speed = 300f;
     public float jumpforce = 700f;
+    public int ExtraJumpsValue = 0;
+    public float DashForce = 300f;
     private float MoveInput;
     private Rigidbody2D rb;
     private bool facingRight = true;
@@ -17,10 +19,12 @@ public class MouvementControl : MonoBehaviour
     public LayerMask whatIsGround;
 
     private int ExtraJumps;
-    public int ExtraJumpsValue = 0;
     private bool jump = false;
     public Animator anim;
     private bool isMoving;
+
+    bool dash = false;
+    private float DashSpeed;
 
 
     void Start()
@@ -33,18 +37,24 @@ public class MouvementControl : MonoBehaviour
     {
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, checkRadius, whatIsGround);  //verifie si il est sur le sol
 
-        rb.velocity = new Vector2(MoveInput, rb.velocity.y);
+        rb.velocity = new Vector2(MoveInput * speed * Time.deltaTime, rb.velocity.y);
 
         if(jump == true)
         {
             rb.velocity = Vector2.up * jumpforce * Time.deltaTime;
             jump = false;
         }
+
+        if(dash == true)
+        {
+            rb.velocity = new Vector2(DashSpeed, rb.velocity.y);
+            dash = false;
+        }
     }
 
     void Update()
     {
-        MoveInput = Input.GetAxisRaw("Horizontal") * speed * Time.deltaTime;
+        MoveInput = Input.GetAxisRaw("Horizontal");
         if(facingRight == false && MoveInput > 0)
         {
             flip();
@@ -54,16 +64,27 @@ public class MouvementControl : MonoBehaviour
             flip();
         }
 
+
+
         if(isGrounded == true)
         {
             ExtraJumps = ExtraJumpsValue - 1;
         }
-
         if(Input.GetKeyDown(KeyCode.UpArrow) && ExtraJumps >= 0)
         {
             ExtraJumps--;
             jump = true;
         }
+
+
+
+        if(Input.GetKeyDown(KeyCode.F))
+        {
+            DashSpeed = DashForce * Time.deltaTime * MoveInput;
+            dash = true;
+        }
+
+
 
         if(MoveInput > 0 || MoveInput < 0)
         {
@@ -73,7 +94,6 @@ public class MouvementControl : MonoBehaviour
         {
             isMoving = false;
         }
-
         anim.SetBool("moving", isMoving);
     }
 

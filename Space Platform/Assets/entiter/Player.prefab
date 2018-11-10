@@ -195,7 +195,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FirePoint: {fileID: 4448468860381330}
   Bullet: {fileID: 1242996774623190, guid: 9fec06c917cbedc44a40413c56ce135e, type: 2}
-  ShootDelay: 0.2
+  ShootDelay: 0.1
   anim: {fileID: 95099340792790300}
 --- !u!114 &114532883045311262
 MonoBehaviour:
@@ -210,11 +210,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 500
   jumpforce: 700
+  ExtraJumpsValue: 1
+  DashForce: 10000
   groundCheck: {fileID: 4974353884936598}
   whatIsGround:
     serializedVersion: 2
     m_Bits: 512
-  ExtraJumpsValue: 1
   anim: {fileID: 95099340792790300}
 --- !u!212 &212463810719692242
 SpriteRenderer:
