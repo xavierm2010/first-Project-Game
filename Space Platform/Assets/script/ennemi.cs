@@ -5,6 +5,7 @@ using UnityEngine;
 public class ennemi : MonoBehaviour {
 
     public int PV = 100;
+    private int PVtotal;
     public float speed;
     private Transform target;
     [SerializeField] private HealthBar healthBar;
@@ -13,6 +14,7 @@ public class ennemi : MonoBehaviour {
     void Start()
     {
         target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+        PVtotal = PV;
     }
 
     public void TakeDamage(int damage)
@@ -27,7 +29,7 @@ public class ennemi : MonoBehaviour {
     void Update()
     {
         transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
-        health = (float)PV / 100;
+        health = (float)PV / PVtotal;
         healthBar.SetSize(health);
     }
 

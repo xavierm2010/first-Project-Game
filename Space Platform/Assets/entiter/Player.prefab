@@ -122,7 +122,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!58 &58379120410116224
 CircleCollider2D:
@@ -211,7 +211,7 @@ MonoBehaviour:
   speed: 500
   jumpforce: 700
   ExtraJumpsValue: 1
-  DashForce: 10000
+  DashForce: 8000
   groundCheck: {fileID: 4974353884936598}
   whatIsGround:
     serializedVersion: 2

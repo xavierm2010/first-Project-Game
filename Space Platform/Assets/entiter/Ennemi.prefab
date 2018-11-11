@@ -260,7 +260,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PV: 100
-  speed: 1
+  speed: 5
   healthBar: {fileID: 114310602824317202}
 --- !u!212 &212148633074245866
 SpriteRenderer:

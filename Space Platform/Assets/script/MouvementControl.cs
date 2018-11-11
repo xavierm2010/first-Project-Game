@@ -65,7 +65,7 @@ public class MouvementControl : MonoBehaviour
         }
 
 
-
+        //Compteur de saut
         if(isGrounded == true)
         {
             ExtraJumps = ExtraJumpsValue - 1;
@@ -77,7 +77,7 @@ public class MouvementControl : MonoBehaviour
         }
 
 
-
+        //dash
         if(Input.GetKeyDown(KeyCode.F))
         {
             DashSpeed = DashForce * Time.deltaTime * MoveInput;
@@ -85,7 +85,7 @@ public class MouvementControl : MonoBehaviour
         }
 
 
-
+        //animator
         if(MoveInput > 0 || MoveInput < 0)
         {
             isMoving = true;
