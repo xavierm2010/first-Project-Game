@@ -7,6 +7,7 @@ public class ennemi : MonoBehaviour {
     public int PV = 100;
     private int PVtotal;
     public float speed;
+    public float damage = 5;
     private Transform target;
     [SerializeField] private HealthBar healthBar;
     private float health;
@@ -37,5 +38,14 @@ public class ennemi : MonoBehaviour {
     {
         Destroy(gameObject);
     }
-	
+
+
+    void OnTriggerEnter2D(Collider2D hit)
+    {
+        Player Player = hit.GetComponent<Player>();
+        if (Player != null)
+        {
+            Player.gotHit(damage);
+        }
+    }
 }

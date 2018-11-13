@@ -5,6 +5,7 @@ using UnityEngine;
 public class Player : MonoBehaviour {
 
     public PlayerHealthBar Health;
+
     public float PVMax = 100;
     private float PV;
 
@@ -16,7 +17,11 @@ public class Player : MonoBehaviour {
 	
 	void Update ()
     {
-        PV = PV - (1 * Time.deltaTime);
-        //Health.fill(PV, PVMax);
+        Health.fill(PV, PVMax);
 	}
+
+    public void gotHit(float damage)
+    {
+        PV -= damage;
+    }
 }

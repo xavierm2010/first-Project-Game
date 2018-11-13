@@ -5,19 +5,11 @@ using UnityEngine.UI;
 
 public class PlayerHealthBar : MonoBehaviour {
 
-    private Image HealthBar;
-    public float PVMax = 100;
-    private float PV;
+    public Image HealthBar;
 
-    void Start ()
+
+    public void fill(float PV, float PVMax)
     {
-        HealthBar = GetComponent<Image>();
-        PV = PVMax;
-	}
-	
-	void Update()
-    {
-        PV = PV - (5 * Time.deltaTime);
         HealthBar.fillAmount = PV / PVMax;
     }
 }
