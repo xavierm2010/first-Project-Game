@@ -4,13 +4,14 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    public float speed = 300f;
+    public float speed = 500f;
     public float jumpforce = 700f;
-    public int ExtraJumpsValue = 0;
-    public float DashForce = 300f;
-    public float PVMax = 100;
-    public float PushBackX = 1000f;
-    public float PushBackY = 1000f;
+    public int ExtraJumpsValue = 1;
+    public float DashForce = 8000f;
+    public float PVMax = 100f;
+    public float AnduranceMax = 100f;
+    public float PushBackX = 100f;
+    public float PushBackY = 10f;
     private float MoveInput;
     private Rigidbody2D rb;
     private bool facingRight = true;
@@ -29,8 +30,10 @@ public class Player : MonoBehaviour
     private float DashSpeed;
 
     public PlayerHealthBar Health;
+    public Stamina Andu;
 
     private float PV;
+    private float Andurance;
     private bool PushBack = false;
 
 
@@ -39,6 +42,7 @@ public class Player : MonoBehaviour
         ExtraJumps = ExtraJumpsValue - 1;
         rb = GetComponent<Rigidbody2D>();
         PV = PVMax;
+        Andurance = AnduranceMax;
     }
 
     void FixedUpdate()
@@ -54,11 +58,15 @@ public class Player : MonoBehaviour
             jump = false;
         }
 
+
+
         if (dash == true)
         {
             rb.velocity = new Vector2(DashSpeed, rb.velocity.y);
             dash = false;
         }
+
+
 
         if ((PushBack == true) && (facingRight == true))
         {
@@ -74,8 +82,14 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-        //remplissage de la bar de vie
+        //remplissage des bares
         Health.fill(PV, PVMax);
+        Andu.fill(Andurance, AnduranceMax);
+
+        if(Andurance <= 100f)
+        {
+            Andurance = Andurance + (5 * Time.deltaTime);
+        }
 
 
         //deplacement
@@ -103,9 +117,10 @@ public class Player : MonoBehaviour
 
 
         //dash
-        if (Input.GetKeyDown(KeyCode.F))
+        if ((Input.GetKeyDown(KeyCode.F)) && (MoveInput != 0) && (Andurance >= 10))
         {
             DashSpeed = DashForce * Time.deltaTime * MoveInput;
+            Andurance = Andurance - 10f;
             dash = true;
         }
 
@@ -135,6 +150,6 @@ public class Player : MonoBehaviour
     public void gotHit(float damage)
     {
         PV -= damage;
-        PushBack = true;
+        //PushBack = true;
     }
 }
