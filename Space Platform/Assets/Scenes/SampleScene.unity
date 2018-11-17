@@ -1296,15 +1296,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_LookaheadTime: 0
-  m_LookaheadSmoothing: 10
-  m_LookaheadIgnoreY: 0
-  m_XDamping: 1
+  m_LookaheadSmoothing: 3
+  m_LookaheadIgnoreY: 1
+  m_XDamping: 0.5
   m_YDamping: 1
-  m_ZDamping: 1
+  m_ZDamping: 0
   m_ScreenX: 0.5
   m_ScreenY: 0.5
   m_CameraDistance: 10
-  m_DeadZoneWidth: 0.051
+  m_DeadZoneWidth: 0
   m_DeadZoneHeight: 0
   m_DeadZoneDepth: 0
   m_UnlimitedSoftZone: 0
@@ -1378,6 +1378,16 @@ Prefab:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 398945787}
+    - target: {fileID: 224933844355234738, guid: 4b34ea019692dd84b8a45bb9b30712cb,
+        type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -2738
+      objectReference: {fileID: 0}
+    - target: {fileID: 224334229057334254, guid: 4b34ea019692dd84b8a45bb9b30712cb,
+        type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -2741
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4b34ea019692dd84b8a45bb9b30712cb, type: 2}
   m_IsPrefabAsset: 0

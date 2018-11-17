@@ -456,6 +456,7 @@ MonoBehaviour:
   jumpforce: 700
   ExtraJumpsValue: 1
   DashForce: 8000
+  DashStamina: 20
   PVMax: 100
   AnduranceMax: 100
   PushBackX: 100

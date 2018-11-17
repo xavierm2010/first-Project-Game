@@ -8,6 +8,7 @@ public class Player : MonoBehaviour
     public float jumpforce = 700f;
     public int ExtraJumpsValue = 1;
     public float DashForce = 8000f;
+    public float DashStamina = 10f;
     public float PVMax = 100f;
     public float AnduranceMax = 100f;
     public float PushBackX = 100f;
@@ -117,10 +118,10 @@ public class Player : MonoBehaviour
 
 
         //dash
-        if ((Input.GetKeyDown(KeyCode.F)) && (MoveInput != 0) && (Andurance >= 10))
+        if ((Input.GetKeyDown(KeyCode.F)) && (MoveInput != 0) && (Andurance >= DashStamina))
         {
             DashSpeed = DashForce * Time.deltaTime * MoveInput;
-            Andurance = Andurance - 10f;
+            Andurance = Andurance - DashStamina;
             dash = true;
         }
 
@@ -135,6 +136,7 @@ public class Player : MonoBehaviour
             isMoving = false;
         }
         anim.SetBool("moving", isMoving);
+        anim.SetBool("jump", !isGrounded);
     }
 
 
