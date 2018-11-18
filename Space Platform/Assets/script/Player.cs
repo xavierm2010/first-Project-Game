@@ -11,15 +11,13 @@ public class Player : MonoBehaviour
     public float DashStamina = 10f;
     public float PVMax = 100f;
     public float AnduranceMax = 100f;
-    public float PushBackX = 100f;
-    public float PushBackY = 10f;
     private float MoveInput;
     private Rigidbody2D rb;
     private bool facingRight = true;
 
     private bool isGrounded;            //ground check variable
     public Transform groundCheck;
-    private float checkRadius = 0.1f;
+    private float checkRadius = 0.05f;
     public LayerMask whatIsGround;
 
     private int ExtraJumps;
@@ -35,7 +33,6 @@ public class Player : MonoBehaviour
 
     private float PV;
     private float Andurance;
-    private bool PushBack = false;
 
 
     void Start()
@@ -67,18 +64,6 @@ public class Player : MonoBehaviour
             dash = false;
         }
 
-
-
-        if ((PushBack == true) && (facingRight == true))
-        {
-            rb.velocity = new Vector2(-PushBackX, PushBackY);
-            PushBack = false;
-        }
-        else if ((PushBack == true) && (facingRight == false))
-        {
-            rb.velocity = new Vector2(PushBackX, PushBackY);
-            PushBack = false;
-        }
     }
 
     void Update()
@@ -152,6 +137,5 @@ public class Player : MonoBehaviour
     public void gotHit(float damage)
     {
         PV -= damage;
-        //PushBack = true;
     }
 }
