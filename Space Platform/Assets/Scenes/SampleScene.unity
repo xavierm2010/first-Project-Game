@@ -1502,6 +1502,11 @@ Prefab:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 398945787}
+    - target: {fileID: 114377204592543294, guid: 4b34ea019692dd84b8a45bb9b30712cb,
+        type: 2}
+      propertyPath: Piew
+      value: 
+      objectReference: {fileID: 8300000, guid: 19dc1a51ef0e0e54583d603ebf80b847, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4b34ea019692dd84b8a45bb9b30712cb, type: 2}
   m_IsPrefabAsset: 0

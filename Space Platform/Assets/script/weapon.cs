@@ -36,5 +36,6 @@ public class weapon : MonoBehaviour {
     void Shoot()
     {
         Instantiate(Bullet, FirePoint.position, FirePoint.rotation);
+        
     }
 }
