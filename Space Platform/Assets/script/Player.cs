@@ -6,8 +6,8 @@ public class Player : MonoBehaviour
 {
     public float speed = 500f;
     public float jumpforce = 700f;
-    public int ExtraJumpsValue = 1;
-    public float DashForce = 8000f;
+    public float DashSpeed;
+    public float StartDashTime;
     public float DashStamina = 10f;
     public float PVMax = 100f;
     public float AnduranceMax = 100f;
@@ -15,9 +15,10 @@ public class Player : MonoBehaviour
     private Rigidbody2D rb;
     private bool facingRight = true;
 
-    private bool isGrounded;            //ground check variable
+    private bool isGrounded;
+    private bool isGroundedPrev;
     public Transform groundCheck;
-    private float checkRadius = 0.05f;
+    private float checkRadius = 0.1f;
     public LayerMask whatIsGround;
 
     private int ExtraJumps;
@@ -26,7 +27,7 @@ public class Player : MonoBehaviour
     private bool isMoving;
 
     bool dash = false;
-    private float DashSpeed;
+    private float DashTime;
 
     public PlayerHealthBar Health;
     public Stamina Andu;
@@ -37,10 +38,12 @@ public class Player : MonoBehaviour
 
     void Start()
     {
-        ExtraJumps = ExtraJumpsValue - 1;
+        ExtraJumps = 1;
         rb = GetComponent<Rigidbody2D>();
         PV = PVMax;
         Andurance = AnduranceMax;
+        DashTime = StartDashTime;
+        isGroundedPrev = isGrounded;
     }
 
     void FixedUpdate()
@@ -57,13 +60,20 @@ public class Player : MonoBehaviour
         }
 
 
-
-        if (dash == true)
+        //Dash
+        if (DashTime > 0 && dash == true)
         {
-            rb.velocity = new Vector2(DashSpeed, rb.velocity.y);
-            dash = false;
-        }
+            DashTime -= Time.deltaTime;
 
+            if (dash == true && MoveInput > 0)
+            {
+                rb.velocity = Vector2.right * DashSpeed;
+            }
+            else if (dash == true && MoveInput < 0)
+            {
+                rb.velocity = Vector2.left * DashSpeed;
+            }
+        }
     }
 
     void Update()
@@ -72,7 +82,7 @@ public class Player : MonoBehaviour
         Health.fill(PV, PVMax);
         Andu.fill(Andurance, AnduranceMax);
 
-        if(Andurance <= 100f)
+        if(Andurance <= AnduranceMax)
         {
             Andurance = Andurance + (5 * Time.deltaTime);
         }
@@ -91,10 +101,12 @@ public class Player : MonoBehaviour
 
 
         //Compteur de saut
-        if (isGrounded == true)
+        if (isGrounded == true && isGroundedPrev == false)
         {
-            ExtraJumps = ExtraJumpsValue - 1;
+            ExtraJumps = 1;
         }
+        isGroundedPrev = isGrounded;
+        
         if (Input.GetKeyDown(KeyCode.UpArrow) && ExtraJumps >= 0)
         {
             ExtraJumps--;
@@ -103,11 +115,15 @@ public class Player : MonoBehaviour
 
 
         //dash
-        if ((Input.GetKeyDown(KeyCode.F)) && (MoveInput != 0) && (Andurance >= DashStamina))
+        if ((Input.GetKeyDown(KeyCode.F)) && (Andurance >= DashStamina))
         {
-            DashSpeed = DashForce * Time.deltaTime * MoveInput;
             Andurance = Andurance - DashStamina;
             dash = true;
+        }
+        if (DashTime <= 0)
+        {
+            dash = false;
+            DashTime = StartDashTime;
         }
 
 

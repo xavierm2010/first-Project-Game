@@ -12,6 +12,11 @@ public class ennemi : MonoBehaviour {
     [SerializeField] private HealthBar healthBar;
     private float health;
 
+    private bool follow;
+    public Transform PlayerCheck;
+    private float CheckRadius = 30f;
+    public LayerMask WhatIsPlayer;
+
     void Start()
     {
         target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
@@ -27,9 +32,17 @@ public class ennemi : MonoBehaviour {
         }
     }
 
+    void FixedUpdate()
+    {
+        follow = Physics2D.OverlapCircle(PlayerCheck.position, CheckRadius, WhatIsPlayer);
+    }
+
     void Update()
     {
-        transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
+        if(follow == true)
+        {
+            transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
+        }
         health = (float)PV / PVtotal;
         healthBar.SetSize(health);
     }
