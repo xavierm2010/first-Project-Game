@@ -8,10 +8,14 @@ public class bullet : MonoBehaviour {
     public int damage = 40;
     public Rigidbody2D rb;
     public int time = 100;
+    private SpriteRenderer rendu;
+    private CircleCollider2D cercle;
 
 	void Start ()
     {
         rb.velocity = transform.right * SpeedBullet;
+        rendu = GetComponent<SpriteRenderer>();
+        cercle = GetComponent<CircleCollider2D>();
 	}
 
     void Update()
@@ -33,7 +37,8 @@ public class bullet : MonoBehaviour {
         {
             ennemi.TakeDamage(damage);
         }
-        Destroy(gameObject);
+        rendu.enabled = false;
+        cercle.enabled = false;
     }
 
     void Die()

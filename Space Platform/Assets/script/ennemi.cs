@@ -23,9 +23,9 @@ public class ennemi : MonoBehaviour {
         PVtotal = PV;
     }
 
-    public void TakeDamage(int damage)
+    public void TakeDamage(int Damage)
     {
-        PV -= damage;
+        PV -= Damage;
         if(PV <= 0)
         {
             Die();

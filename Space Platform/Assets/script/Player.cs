@@ -18,7 +18,7 @@ public class Player : MonoBehaviour
     private bool isGrounded;
     private bool isGroundedPrev;
     public Transform groundCheck;
-    private float checkRadius = 0.1f;
+    private float checkRadius = 0.5f;
     public LayerMask whatIsGround;
 
     private int ExtraJumps;
@@ -138,6 +138,13 @@ public class Player : MonoBehaviour
         }
         anim.SetBool("moving", isMoving);
         anim.SetBool("jump", !isGrounded);
+
+
+        //Player Die
+        if (PV <= 0)
+        {
+            FindObjectOfType<GameManager>().EndGame();
+        }
     }
 
 
