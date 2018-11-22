@@ -278,7 +278,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PV: 100
-  speed: 5
+  speed: 6
   damage: 50
   healthBar: {fileID: 114853410625802676}
   PlayerCheck: {fileID: 4036482959670530}

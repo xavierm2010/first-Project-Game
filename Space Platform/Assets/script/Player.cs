@@ -4,13 +4,17 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    [Space]
     public float speed = 500f;
     public float jumpforce = 700f;
+    [Space]
     public float DashSpeed;
     public float StartDashTime;
     public float DashStamina = 10f;
+    [Space]
     public float PVMax = 100f;
     public float AnduranceMax = 100f;
+    [Space]
     private float MoveInput;
     private Rigidbody2D rb;
     private bool facingRight = true;
