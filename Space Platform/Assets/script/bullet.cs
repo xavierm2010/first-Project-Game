@@ -10,6 +10,7 @@ public class bullet : MonoBehaviour {
     public int time = 100;
     private SpriteRenderer rendu;
     private CircleCollider2D cercle;
+    public ParticleSystem boom;
 
 	void Start ()
     {
@@ -37,8 +38,10 @@ public class bullet : MonoBehaviour {
         {
             ennemi.TakeDamage(damage);
         }
+        rb.velocity = Vector2.zero;
         rendu.enabled = false;
         cercle.enabled = false;
+        //boom.Play();
     }
 
     void Die()
