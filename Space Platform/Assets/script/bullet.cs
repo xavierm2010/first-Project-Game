@@ -41,7 +41,7 @@ public class bullet : MonoBehaviour {
         rb.velocity = Vector2.zero;
         rendu.enabled = false;
         cercle.enabled = false;
-        //boom.Play();
+        boom.Play();
     }
 
     void Die()
