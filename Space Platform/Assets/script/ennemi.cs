@@ -43,6 +43,7 @@ public class ennemi : MonoBehaviour {
         {
             transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
         }
+
         health = (float)PV / PVtotal;
         healthBar.SetSize(health);
     }

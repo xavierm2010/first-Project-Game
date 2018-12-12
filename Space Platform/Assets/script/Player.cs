@@ -131,6 +131,14 @@ public class Player : MonoBehaviour
         }
 
 
+        //radar
+        if (Input.GetKeyDown(KeyCode.S))
+        {
+            var ennemis = FindObjectsOfType<ennemi>();
+            Debug.Log(ennemis.Length);
+        }
+
+
         //animator
         if (MoveInput > 0 || MoveInput < 0)
         {
