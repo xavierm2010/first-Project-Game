@@ -1,11 +1,10 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class scrollingBackground : MonoBehaviour
 {
     public float backgroundSize;
     public float paralaxSpeed;
+    public float yOffset;
     public Transform camPosition;
 
     private Transform[] layers;
@@ -38,16 +37,21 @@ public class scrollingBackground : MonoBehaviour
         lastCameraY = camPosition.position.y;
 
         if (camPosition.position.x < (layers[leftIndex].transform.position.x + viewZone))
+        {
             ScrollLeft();
+        }
 
         if (camPosition.position.x > (layers[rightIndex].transform.position.x - viewZone))
+        {
             ScrollRight();
+        }
     }
 
     private void ScrollLeft()
     {
-        layers[rightIndex].position = Vector3.right * (layers[leftIndex].position.x - backgroundSize);
-
+        float backgroundY;
+        backgroundY = transform.position.y;
+        layers[rightIndex].position = new Vector3(layers[leftIndex].position.x - backgroundSize, yOffset + backgroundY, 0);
         leftIndex = rightIndex;
         rightIndex--;
         if(rightIndex < 0)
@@ -58,7 +62,9 @@ public class scrollingBackground : MonoBehaviour
 
     private void ScrollRight()
     {
-        layers[leftIndex].position = Vector3.right * (layers[rightIndex].position.x + backgroundSize);
+        float backgroundY;
+        backgroundY = transform.position.y;
+        layers[leftIndex].position = new Vector3(layers[rightIndex].position.x + backgroundSize, yOffset + backgroundY, 0);
         rightIndex = leftIndex;
         leftIndex++;
         if (leftIndex ==  layers.Length)
