@@ -35,10 +35,9 @@ public class Player : MonoBehaviour
 
     public PlayerHealthBar Health;
     public Stamina Andu;
-
+    [Space]
     private float PV;
     private float Andurance;
-
 
     void Start()
     {
@@ -76,6 +75,17 @@ public class Player : MonoBehaviour
             else if (dash == true && MoveInput < 0)
             {
                 rb.velocity = Vector2.left * DashSpeed;
+            }
+            else if(dash == true && MoveInput == 0)
+            {
+                if(facingRight == true)
+                {
+                    rb.velocity = Vector2.right * DashSpeed;
+                }
+                else
+                {
+                    rb.velocity = Vector2.left * DashSpeed;
+                }
             }
         }
     }
@@ -118,24 +128,16 @@ public class Player : MonoBehaviour
         }
 
 
-        //dash
-        if ((Input.GetKeyDown(KeyCode.F)) && (Andurance >= DashStamina))
+        //roulade vrai ou faux
+        if ((Input.GetKeyDown(KeyCode.R)) && (Andurance >= DashStamina) && (isGrounded == true))
         {
             Andurance = Andurance - DashStamina;
             dash = true;
         }
-        if (DashTime <= 0)
+        if (DashTime <= 0) //longueur roulade
         {
             dash = false;
             DashTime = StartDashTime;
-        }
-
-
-        //radar
-        if (Input.GetKeyDown(KeyCode.S))
-        {
-            var ennemis = FindObjectsOfType<ennemi>();
-            Debug.Log(ennemis.Length);
         }
 
 
@@ -173,4 +175,5 @@ public class Player : MonoBehaviour
     {
         PV -= damage;
     }
+
 }
