@@ -13,14 +13,14 @@ public class weapon : MonoBehaviour {
 
     void Update ()
     {
-		if(Input.GetKey(KeyCode.E) && ShootFrequence <= 0)
+		if(Input.GetKey(KeyCode.Space) && ShootFrequence <= 0)
         {
             Fire = true;
             Shoot();
             ShootFrequence = ShootDelay;
         }
 
-        else if (Input.GetKey(KeyCode.E) && ShootFrequence > 0)
+        else if (Input.GetKey(KeyCode.Space) && ShootFrequence > 0)
         {
             Fire = true;
             ShootFrequence = ShootFrequence - Time.deltaTime;

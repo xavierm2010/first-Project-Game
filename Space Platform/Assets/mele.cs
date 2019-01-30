@@ -17,11 +17,13 @@ public class mele : MonoBehaviour
 
     private void Update()
     {
+
         //attack mele
         if (Input.GetKeyDown(KeyCode.T) && tempAttackMele == tempAttackMeleMax)
         {
             Mele.enabled = true;
         }
+
         if (tempAttackMele <= 0)
         {
             tempAttackMele = tempAttackMeleMax;
