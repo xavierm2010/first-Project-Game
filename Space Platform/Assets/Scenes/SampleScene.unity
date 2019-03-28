@@ -2217,41 +2217,6 @@ Prefab:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 398945787}
-    - target: {fileID: 61860903330203618, guid: 4b34ea019692dd84b8a45bb9b30712cb,
-        type: 2}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 61848429525467840, guid: 4b34ea019692dd84b8a45bb9b30712cb,
-        type: 2}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114176082945329128, guid: 4b34ea019692dd84b8a45bb9b30712cb,
-        type: 2}
-      propertyPath: ShootDelay
-      value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114092157116457334, guid: 4b34ea019692dd84b8a45bb9b30712cb,
-        type: 2}
-      propertyPath: speed
-      value: 450
-      objectReference: {fileID: 0}
-    - target: {fileID: 61848429525467840, guid: 4b34ea019692dd84b8a45bb9b30712cb,
-        type: 2}
-      propertyPath: m_Offset.y
-      value: -0.084200144
-      objectReference: {fileID: 0}
-    - target: {fileID: 61848429525467840, guid: 4b34ea019692dd84b8a45bb9b30712cb,
-        type: 2}
-      propertyPath: m_Size.y
-      value: 2.6984
-      objectReference: {fileID: 0}
-    - target: {fileID: 61848429525467840, guid: 4b34ea019692dd84b8a45bb9b30712cb,
-        type: 2}
-      propertyPath: m_UsedByEffector
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4b34ea019692dd84b8a45bb9b30712cb, type: 2}
   m_IsPrefabAsset: 0

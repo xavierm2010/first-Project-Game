@@ -85,7 +85,7 @@ GameObject:
   - component: {fileID: 61541186503995402}
   - component: {fileID: 114426820846575676}
   m_Layer: 9
-  m_Name: Ennemi 1
+  m_Name: spikes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -171,7 +171,7 @@ Transform:
   m_GameObject: {fileID: 1647665356337554}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 30.91, y: -3.39, z: 0}
-  m_LocalScale: {x: 0.8, y: 0.8, z: 0.8}
+  m_LocalScale: {x: 0.8, y: 1.6, z: 0.8}
   m_Children:
   - {fileID: 4692545739029374}
   - {fileID: 4036482959670530}
