@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4428161724996092}
   - component: {fileID: 212629398964102742}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: BackGround
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -35,7 +35,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4036482959670530}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: PlayerCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -50,7 +50,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4009281741753114}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: Bar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -66,7 +66,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4692545739029374}
   - component: {fileID: 114853410625802676}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: HealthBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -83,10 +83,9 @@ GameObject:
   - component: {fileID: 4393429407494014}
   - component: {fileID: 212654208711142560}
   - component: {fileID: 61541186503995402}
-  - component: {fileID: 50113439622899226}
   - component: {fileID: 114426820846575676}
-  m_Layer: 10
-  m_Name: Ennemi
+  m_Layer: 9
+  m_Name: Ennemi 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -101,7 +100,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4376102712377906}
   - component: {fileID: 212493328819388154}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: BarSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -117,7 +116,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4663653084767832}
   - component: {fileID: 212016841325094524}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: Border
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -171,7 +170,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1647665356337554}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 14.85, y: -7.54, z: 0}
+  m_LocalPosition: {x: 30.91, y: -3.39, z: 0}
   m_LocalScale: {x: 0.8, y: 0.8, z: 0.8}
   m_Children:
   - {fileID: 4692545739029374}
@@ -221,26 +220,6 @@ Transform:
   m_Father: {fileID: 4393429407494014}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!50 &50113439622899226
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1647665356337554}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 1
-  m_Constraints: 4
 --- !u!61 &61541186503995402
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -253,7 +232,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.06673461, y: 0.13774586}
+  m_Offset: {x: -0.039520025, y: 0.06748444}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -264,7 +243,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 3.696076, y: 4.1884108}
+  m_Size: {x: 2.0195937, y: 0.8838272}
   m_EdgeRadius: 0
 --- !u!114 &114426820846575676
 MonoBehaviour:
@@ -277,10 +256,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23ae3d570084b904ca3066ef2584a81b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PV: 100
-  speed: 6
-  damage: 50
-  healthBar: {fileID: 114853410625802676}
+  PV: 300000
+  speed: 0
+  damage: 15
+  healthBar: {fileID: 0}
   PlayerCheck: {fileID: 4036482959670530}
   WhatIsPlayer:
     serializedVersion: 2
@@ -469,8 +448,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 90
-  m_Sprite: {fileID: 21300000, guid: 90e285847ad2938489a975ced967eff5, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 655efb70055032149982f2feb5de2457, type: 3}
+  m_Color: {r: 0.8301887, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
